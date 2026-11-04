@@ -1,3 +1,3 @@
-# Local dataset and source archive
-/RELAXDataset/
-/RELAXDataset.zip
+# Local dataset and source archive (ignored at any depth)
+**/RELAXDataset/
+**/RELAXDataset.zip

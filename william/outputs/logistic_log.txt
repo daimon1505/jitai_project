@@ -1,0 +1,48 @@
+
+=== window 10 min: 891/2109 EMAs usable, 31 subjects, stress rate 0.306
+Dummy: always 'stress'           AUROC 0.500 [nan-nan]  balAcc 0.500  F1 0.469  subjAUROC 0.500±0.000
+Dummy: stratified random         AUROC 0.514 [0.49-0.53]  balAcc 0.514  F1 0.348  subjAUROC 0.537±0.136
+LR: HRV only, raw                AUROC 0.422 [0.34-0.50]  balAcc 0.454  F1 0.334  subjAUROC 0.508±0.163
+LR: HRV + ACC, raw               AUROC 0.454 [0.38-0.53]  balAcc 0.469  F1 0.349  subjAUROC 0.514±0.201
+LR: HRV only, per-person z       AUROC 0.535 [0.48-0.59]  balAcc 0.539  F1 0.418  subjAUROC 0.568±0.212
+LR: HRV + ACC, per-person z      AUROC 0.536 [0.48-0.59]  balAcc 0.541  F1 0.423  subjAUROC 0.587±0.226
+
+=== window 30 min: 1131/2109 EMAs usable, 31 subjects, stress rate 0.309
+Dummy: always 'stress'           AUROC 0.500 [nan-nan]  balAcc 0.500  F1 0.473  subjAUROC 0.500±0.000
+Dummy: stratified random         AUROC 0.502 [0.48-0.53]  balAcc 0.502  F1 0.318  subjAUROC 0.503±0.127
+LR: HRV only, raw                AUROC 0.423 [0.35-0.51]  balAcc 0.478  F1 0.365  subjAUROC 0.504±0.148
+LR: HRV + ACC, raw               AUROC 0.460 [0.39-0.54]  balAcc 0.468  F1 0.355  subjAUROC 0.501±0.178
+LR: HRV only, per-person z       AUROC 0.560 [0.53-0.61]  balAcc 0.534  F1 0.409  subjAUROC 0.596±0.152
+LR: HRV + ACC, per-person z      AUROC 0.568 [0.53-0.61]  balAcc 0.551  F1 0.435  subjAUROC 0.596±0.145
+
+Main model: LR: HRV + ACC, per-person z
+                 coef_std  perm_auc_drop  perm_sd
+mean_rr           -0.5624         0.0875   0.0129
+lf                 0.3689         0.0594   0.0150
+acc_axis_std      -0.1983         0.0313   0.0107
+mean_hr           -0.3039         0.0286   0.0079
+acc_enmo          -0.1822         0.0265   0.0067
+acc_active_frac    0.1858         0.0245   0.0079
+sd_hr             -0.2662         0.0240   0.0091
+acc_mag_std        0.1622         0.0143   0.0075
+rmssd              0.1304         0.0114   0.0048
+pnn50             -0.1012         0.0109   0.0047
+cv_rr             -0.0385         0.0025   0.0020
+lf_hf             -0.0248         0.0021   0.0015
+hf                -0.0442         0.0016   0.0022
+acc_mag_mean      -0.0025         0.0004   0.0006
+sdnn               0.0248         0.0001   0.0014
+missing-indicator coefs: {'missing_acc_mag_mean': 0.01, 'missing_acc_mag_std': 0.01, 'missing_acc_enmo': 0.01, 'missing_acc_active_frac': 0.01, 'missing_acc_axis_std': 0.01}
+       n  auroc  bal_acc     f1  recall   auroc_ci  window_min                        model  subj_auroc_mean  subj_auroc_sd  subj_auroc_n  C_mode
+0    891  0.500    0.500  0.469   1.000    nan-nan          10       Dummy: always 'stress'            0.500          0.000            30     NaN
+1    891  0.514    0.514  0.348   0.377  0.49-0.53          10     Dummy: stratified random            0.537          0.136            30     NaN
+2    891  0.422    0.454  0.334   0.443  0.34-0.50          10            LR: HRV only, raw            0.508          0.163            30   0.001
+3    891  0.454    0.469  0.349   0.462  0.38-0.53          10           LR: HRV + ACC, raw            0.514          0.201            30   0.010
+4    891  0.535    0.539  0.418   0.542  0.48-0.59          10   LR: HRV only, per-person z            0.568          0.212            30   0.100
+5    891  0.536    0.541  0.423   0.557  0.48-0.59          10  LR: HRV + ACC, per-person z            0.587          0.226            30   0.100
+6   1131  0.500    0.500  0.473   1.000    nan-nan          30       Dummy: always 'stress'            0.500          0.000            30     NaN
+7   1131  0.502    0.502  0.318   0.326  0.48-0.53          30     Dummy: stratified random            0.503          0.127            30     NaN
+8   1131  0.423    0.478  0.365   0.489  0.35-0.51          30            LR: HRV only, raw            0.504          0.148            30   0.001
+9   1131  0.460    0.468  0.355   0.474  0.39-0.54          30           LR: HRV + ACC, raw            0.501          0.178            30   0.010
+10  1131  0.560    0.534  0.409   0.511  0.53-0.61          30   LR: HRV only, per-person z            0.596          0.152            30   0.100
+11  1131  0.568    0.551  0.435   0.569  0.53-0.61          30  LR: HRV + ACC, per-person z            0.596          0.145            30   1.000
